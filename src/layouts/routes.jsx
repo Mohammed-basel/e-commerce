@@ -5,12 +5,17 @@ import Categories from "./../components/web/categories/Categories.jsx";
 import Dashbordlayout from "./Dashboardlayout.jsx";
 import Homedashboard from "./../components/dashboard/home/Home.jsx";
 import CategoriesDashboard from "./../components/dashboard/categoties/Categories.jsx";
+import Register from './../components/web/register/Register';
 
 export const router = createBrowserRouter([
     {
       path: "/",
       element: <Layout/>,
       children:[
+        {
+          path: 'register',
+          element:<Register/>
+          },
         {
         path: 'home',
         element:<Home/>
