@@ -4,7 +4,7 @@ import Register from './../register/Register';
 
 function BasicExample() {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary bg-dark text-light text-center p-3">
       <div className="container">
       <a className="navbar-brand" href="#">M-shop</a>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

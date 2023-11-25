@@ -1,11 +1,12 @@
 import React from "react";
 
-function Inputs({ id, title, type = "text", name, value, onChange, errors }) {
-    console.log(errors)
+function Inputs({ id, title, type = "text", name, value, onChange, errors,onBlur,touched }) {
+    
+
   return (
     <>
       <div className="input-group mb-3">
-        <label htmlFor={id}>{title}</label>
+        <label htmlFor={id} className="me-2">{title}</label>
         <input
           type={type}
           name={name}
@@ -13,8 +14,9 @@ function Inputs({ id, title, type = "text", name, value, onChange, errors }) {
           id={id}
           value={value} 
           onChange={onChange}
+          onBlur={onBlur}
         />
-        {errors[name] &&<p className="text text-danger">{errors[name]}</p>}
+        
       </div>
     </>
   );

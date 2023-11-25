@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 function Footer() {
   return (
-    <div>web Footer</div>
-  )
+    <footer className="bg-dark text-light text-center p-3">
+      <p>&copy; 2023 Mohammed Basel</p>
+    </footer>
+  );
 }
 
-export default Footer
+export default Footer;
