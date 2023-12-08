@@ -4,7 +4,7 @@ import { useQuery } from "react-query";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Link } from "react-router-dom";
-import './Categories.css'
+import './categories.css'
 
 export default function Categories() {
   const getCategories = async () => {
