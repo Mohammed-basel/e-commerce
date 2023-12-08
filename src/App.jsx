@@ -10,8 +10,9 @@ import { useEffect, useState } from "react";
 import SignIn from "./components/web/signin/SignIn.jsx";
 import Dashboardlayout from "./layouts/Dashboardlayout.jsx";
 import HomeDashboard from "./components/dashboard/home/Home.jsx"
-import CategoriesDetails from "./components/web/categories/categoriesDetails.jsx";
 import Product from "./components/web/products/Product.jsx";
+import CategoryDetails from "./components/web/categories/CategoryDetails.jsx";
+
 
 export default function App() {
 
@@ -50,7 +51,7 @@ export default function App() {
         },
         {
           path:'products/category/:categoryId',
-          element:<CategoriesDetails />
+          element:<CategoryDetails />
         },
         {
           path:'product/:productId',

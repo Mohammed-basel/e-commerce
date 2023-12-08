@@ -3,7 +3,7 @@ import React from "react";
 import { useQuery } from "react-query";
 import { Link, useParams } from "react-router-dom";
 
-export default function CategoriesDetails() {
+export default function CategoryDetails() {
   const { categoryId } = useParams();
 
   const getCategoriesDetailes = async () => {
