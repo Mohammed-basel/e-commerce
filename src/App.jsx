@@ -15,7 +15,8 @@ import CategoryDetails from "./components/web/categories/CategoryDetails.jsx";
 import { CartContextProvider } from "./components/web/context/Cart.jsx";
 import Cart from "./components/web/cart/Cart.jsx";
 import SendCode from "./components/web/password/SendCode.jsx";
-import ForgotPassword from "./components/web/password/ForgotPassword.JSX";
+import ForgotPassword from './components/web/password/ForgotPassword.jsx';
+
 
 
 export default function App() {
