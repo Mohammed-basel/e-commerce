@@ -1,16 +1,19 @@
 import axios from "axios";
-import React from "react";
+import React, { useContext } from "react";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import ReactImageMagnify from 'react-image-magnify';
+import { CartContext } from "../context/Cart.jsx";
 
 
 export default function Product() {
   const { productId } = useParams();
 
+  const {addToCartContext} = useContext(CartContext);
+
   const getproduct = async () => {
     const { data } = await axios.get(
-      `${import.meta.env.VITE_API_URL}/products/${productId}`);
+      `https://ecommerce-node4.vercel.app/products/${productId}`);
 
     return data.product;
   };
@@ -18,6 +21,10 @@ export default function Product() {
     "product",
     getproduct
   );
+  const addToCart= async (productId)=>{
+    const res = await addToCartContext(productId);
+    console.log(res)
+  }
   if (isLoading) {
     return <p>Loading....</p>;
   }
@@ -47,6 +54,7 @@ export default function Product() {
         <div className="col-lg-8">
                 <h2>{data.name}</h2>
                 <p>{data.price}</p>
+                <button className="btn btn-outline-info" onClick={()=>addToCart(data._id)}>Add To Cart</button>
         </div>
       </div>
     </div>

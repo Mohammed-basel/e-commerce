@@ -12,6 +12,10 @@ import Dashboardlayout from "./layouts/Dashboardlayout.jsx";
 import HomeDashboard from "./components/dashboard/home/Home.jsx"
 import Product from "./components/web/products/Product.jsx";
 import CategoryDetails from "./components/web/categories/CategoryDetails.jsx";
+import { CartContextProvider } from "./components/web/context/Cart.jsx";
+import Cart from "./components/web/cart/Cart.jsx";
+import SendCode from "./components/web/password/SendCode.jsx";
+import ForgotPassword from "./components/web/password/ForgotPassword.JSX";
 
 
 export default function App() {
@@ -44,6 +48,18 @@ export default function App() {
         {
           index:true,
           element:<Home />
+        },
+        {
+          path:'cart',
+          element:<Cart />
+        },
+        {
+          path:'sendcode',
+          element:<SendCode />
+        },
+        {
+          path:'forgotpassword',
+          element:<ForgotPassword />
         },
         {
           path:'categories',
@@ -85,5 +101,9 @@ export default function App() {
 ]);
 
   return (
-    <RouterProvider router={router} />
+    <CartContextProvider>
+  <RouterProvider router={router} />
+
+    </CartContextProvider>
+    
   )}

@@ -9,11 +9,11 @@ import "./categories.css";
 export default function Categories() {
   const getCategories = async () => {
     try {
-      const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/categories`);
+      const { data } = await axios.get('https://ecommerce-node4.vercel.app/categories/active?limit=7');
+
       return data;
     } catch (error) {
-      console.error("Error fetching categories:", error);
-      throw new Error("Failed to fetch categories");
+      console.error("Error ", error);
     }
   };
 
@@ -41,7 +41,6 @@ export default function Categories() {
               <Link to={`products/category/${category._id}`}>
                 <div className="category">
                   <img src={category.image.secure_url} alt={category.name} className="rounded-circle" />
-                  <h2>{category.name}</h2>
                 </div>
               </Link>
             </SwiperSlide>

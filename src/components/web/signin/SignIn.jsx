@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import { SignInSchema } from "../validation/validate.jsx";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function SignIn({saveCurrentUser}) {
     const navigate = useNavigate();
@@ -92,6 +92,10 @@ theme: "dark",
           >
             Sign In
           </button>
+          <Link to='/sendcode'>
+          Forgot Password
+          </Link>
+          
         </form>
       </div>
     </div>

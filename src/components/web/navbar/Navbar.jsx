@@ -44,9 +44,9 @@ export default function Navbar({user,setUser}) {
               </a>
             </li>
             {user && <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to='cart'>
                 Cart
-              </a>
+              </Link>
             </li>}
           </ul>
           <ul className="navbar-nav">
