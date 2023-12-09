@@ -4,7 +4,6 @@ import { useQuery } from "react-query";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Link } from "react-router-dom";
-import "./categories.css";
 
 export default function Categories() {
   const getCategories = async () => {
@@ -30,8 +29,7 @@ export default function Categories() {
   return (
     <div>
       <Swiper
-        spaceBetween={50}
-        slidesPerView={3}
+        slidesPerView={5}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
       >
@@ -40,7 +38,11 @@ export default function Categories() {
             <SwiperSlide key={category._id}>
               <Link to={`products/category/${category._id}`}>
                 <div className="category">
-                  <img src={category.image.secure_url} alt={category.name} className="rounded-circle" />
+                  <img
+                    src={category.image.secure_url}
+                    alt={category.name}
+                    style={{ maxWidth: "30%", height: "auto" }} 
+                  />
                 </div>
               </Link>
             </SwiperSlide>

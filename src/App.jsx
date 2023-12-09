@@ -16,6 +16,7 @@ import { CartContextProvider } from "./components/web/context/Cart.jsx";
 import Cart from "./components/web/cart/Cart.jsx";
 import SendCode from "./components/web/password/SendCode.jsx";
 import ForgotPassword from './components/web/password/ForgotPassword.jsx';
+import UserProfile from "./components/web/userprofile/UserProfile.jsx";
 
 
 
@@ -61,6 +62,10 @@ export default function App() {
         {
           path:'forgotpassword',
           element:<ForgotPassword />
+        },
+        {
+          path:'userprofile',
+          element:<UserProfile />
         },
         {
           path:'categories',

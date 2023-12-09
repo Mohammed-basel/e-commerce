@@ -1,18 +1,21 @@
 import { Link, useNavigate } from "react-router-dom";
+import CartCounter from "../cart/CartCounter";
 
-export default function Navbar({user,setUser}) {
+export default function Navbar({ user, setUser }) {
   const navigate = useNavigate();
-  const logout = ()=>{
-    localStorage.removeItem('userToken');
+
+  const logout = () => {
+    localStorage.removeItem("userToken");
     setUser(null);
     navigate('/home');
   }
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary bg-dark text-light text-center p-3">
       <div className="container">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to="/">
           M-shop
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -31,13 +34,12 @@ export default function Navbar({user,setUser}) {
                 Home
               </Link>
             </li>
-
             <li className="nav-item">
               <a className="nav-link" href="#">
                 Categories
               </a>
             </li>
-
+           
             <li className="nav-item">
               <a className="nav-link" href="#">
                 Products
@@ -45,60 +47,61 @@ export default function Navbar({user,setUser}) {
             </li>
             {user && <li className="nav-item">
               <Link className="nav-link" to='cart'>
-                Cart
+                Cart <CartCounter />
               </Link>
             </li>}
           </ul>
-          <ul className="navbar-nav">
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown
-              </a>
-              <ul className="dropdown-menu ">
-                {!user ? (
-                  <>
-                    <li>
-                      <Link className="dropdown-item" to="/Register">
-                        register
-                      </Link>
-                    </li>
-                    <li>
-                      <hr className="dropdown-divider" />
-                    </li>
-                    <li>
-                      <Link className="dropdown-item" to="/signIn">
-                        login
-                      </Link>
-                    </li>
-                  </>
-                ) : (
-                  <>
-                    <li>
-                      <Link className="dropdown-item" to="/Register">
-                        Profile
-                      </Link>
-                    </li>
-                    <li>
-                      <hr className="dropdown-divider" />
-                    </li>
-                    <li>
-                      <Link className="dropdown-item" onClick={logout}>
-                        logout
-                      </Link>
-                    </li>
-                  </>
-                )}
-              </ul>
-            </li>
-          </ul>
-        </div>
+        <ul className="navbar-nav">
+          <li className="nav-item dropdown">
+            <a
+              className="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Dropdown
+            </a>
+            <ul className="dropdown-menu ">
+              {!user ? (
+                <>
+                  <li>
+                    <Link className="dropdown-item" to="/Register">
+                      register
+                    </Link>
+                  </li>
+                  <li>
+                    <hr className="dropdown-divider" />
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/signIn">
+                      login
+                    </Link>
+                  </li>
+                  
+                </>
+              ) : (
+                <>
+                  <li>
+                    <Link className="dropdown-item" to="/userprofile">
+                      Profile
+                    </Link>
+                  </li>
+                  <li>
+                    <hr className="dropdown-divider" />
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" onClick={logout}>
+                      logout
+                    </Link>
+                  </li>
+                </>
+              )}
+            </ul>
+          </li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
   );
 }

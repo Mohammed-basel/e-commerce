@@ -92,9 +92,11 @@ theme: "dark",
           >
             Sign In
           </button>
-          <Link to='/sendcode'>
-          Forgot Password
-          </Link>
+          <div className="mt-3 text-center">
+            <Link to="/sendcode" className="text-muted">
+              Forgot Password
+            </Link>
+          </div>
           
         </form>
       </div>

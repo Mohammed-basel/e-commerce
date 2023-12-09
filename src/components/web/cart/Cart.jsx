@@ -113,7 +113,7 @@ export default function Cart() {
                     <div className="subtotal">${product.quantity * product.details.price}</div>
                   </div>
                   ))
-                : "<h2>cart is empty</h2>"}
+                : <h2>cart is empty</h2>}
             </div>
             <div className="cart-summary">
               <h2>Cart summary</h2>
