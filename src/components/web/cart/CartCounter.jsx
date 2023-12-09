@@ -7,7 +7,6 @@ export default function CartCounter() {
   useEffect(() => {
     const token = "Tariq__" + localStorage.getItem('userToken');
     if (!token) {
-      console.log("No token found");
       return;
     }
 

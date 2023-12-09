@@ -8,7 +8,6 @@ function UserProfile() {
     const fetchUserProfile = async () => {
       const token = "Tariq__" + localStorage.getItem('userToken');
       if (!token) {
-        console.log("No token found");
         return;
       }
 

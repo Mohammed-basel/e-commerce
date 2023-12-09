@@ -1,40 +1,41 @@
-import React from "react";
+import React, { useContext } from "react";
 import Input from "../../pages/Inputs.jsx";
 import { useFormik } from "formik";
 import { SignInSchema } from "../validation/validate.jsx";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
+import { UserContext } from "../context/User.jsx";
 
-function SignIn({saveCurrentUser}) {
-    const navigate = useNavigate();
+function SignIn() {
+  let {setUserToken} =useContext(UserContext);
+  const navigate = useNavigate();
   const initialValues = {
     email: "",
     password: "",
   };
 
   const onSubmit = async (users) => {
-   
     const { data } = await axios.post(
       `https://ecommerce-node4.vercel.app/auth/signin`,
       users
     );
     if (data.message == "success") {
-        localStorage.setItem("userToken",data.token);
-        saveCurrentUser();
-        toast("Welcome", {
-            position: "top-right",
-autoClose: 5000,
-hideProgressBar: false,
-closeOnClick: true,
-pauseOnHover: true,
-draggable: true,
-progress: 1,
-theme: "dark",
-          });
+      localStorage.setItem("userToken", data.token);
+      setUserToken(data.token);
+
+      toast("Welcome", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: 1,
+        theme: "dark",
+      });
     }
-    navigate('/')
-    
+    navigate("/");
   };
 
   const formik = useFormik({
@@ -57,7 +58,7 @@ theme: "dark",
       name: "password",
       title: "Password",
       value: formik.values.password,
-    }
+    },
   ];
 
   const renderInputs = Inputs.map((input, index) => (
@@ -87,7 +88,9 @@ theme: "dark",
 
           <button
             type="submit"
-            className={`btn ${formik.isValid ? "btn-primary" : "btn-secondary"} w-100`}
+            className={`btn ${
+              formik.isValid ? "btn-primary" : "btn-secondary"
+            } w-100`}
             disabled={!formik.isValid}
           >
             Sign In
@@ -97,7 +100,6 @@ theme: "dark",
               Forgot Password
             </Link>
           </div>
-          
         </form>
       </div>
     </div>
