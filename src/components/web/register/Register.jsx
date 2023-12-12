@@ -28,7 +28,7 @@ function Register() {
       `https://ecommerce-node4.vercel.app/auth/signup `,
       formData
     );
-    console.log(data);
+
     if (data.message === "success") {
       formik.resetForm();
       toast("Account Created Successfully, make sure to verify your email", {

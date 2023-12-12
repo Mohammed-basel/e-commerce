@@ -13,16 +13,16 @@
 .profileLinks a {
   text-decoration: none;
   color: black;
-  font-size: 18px; /* Set your desired font size */
-  transition: color 0.3s; /* Add a smooth transition effect */
-  display: block; /* Make the entire link clickable with padding */
+  font-size: 18px; 
+  transition: color 0.3s;
+  display: block; 
 
-  padding: 10px; /* Add padding for better clickability */
+  padding: 10px; 
 }
 
 .profileLinks a:hover {
-  color: #007bff; /* Change color on hover (Bootstrap's primary color) */
-  background-color: #f0f0f0; /* Add a background color on hover for better visibility */
+  color: #007bff; 
+  background-color: #f0f0f0;
   width: 100%;
 }
 

@@ -1,8 +1,9 @@
 import React, { useState, useContext, useEffect } from "react";
 import axios from "axios";
 import { CartContext } from "../context/Cart.jsx";
-import './Order.css'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "./Order.css";
 
 export default function Order() {
   const { getCartContext } = useContext(CartContext);
@@ -10,6 +11,7 @@ export default function Order() {
   const [address, setAddress] = useState("");
   const [coupon, setCoupon] = useState("");
   const [cartData, setCartData] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchCartItems = async () => {
@@ -19,8 +21,6 @@ export default function Order() {
 
     fetchCartItems();
   }, [getCartContext]);
-
-  
 
   const calculateTotal = () => {
     return cartData.reduce((total, item) => total + item.details.price, 0);
@@ -45,7 +45,19 @@ export default function Order() {
           },
         }
       );
-      console.log(response);
+
+
+      if (response.data.message === "success") {
+        toast.success("Order placed successfully!", {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          theme: "dark"
+        });
+        navigate("/");
+      }
     } catch (error) {
       console.error("Error placing order:", error);
     }

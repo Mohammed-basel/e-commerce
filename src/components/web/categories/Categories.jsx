@@ -9,7 +9,6 @@ export default function Categories() {
   const getCategories = async () => {
     try {
       const { data } = await axios.get('https://ecommerce-node4.vercel.app/categories/active?limit=7');
-
       return data;
     } catch (error) {
       console.error("Error ", error);
@@ -28,29 +27,31 @@ export default function Categories() {
 
   return (
     <div>
-      <Swiper
-        slidesPerView={5}
-        //onSlideChange={() => console.log("slide change")}
-       // onSwiper={(swiper) => console.log(swiper)}
-      >
-        {data?.categories.length ? (
-          data.categories.map((category) => (
-            <SwiperSlide key={category._id}>
-              <Link to={`products/category/${category._id}`}>
-                <div className="category">
-                  <img
-                    src={category.image.secure_url}
-                    alt={category.name}
-                    style={{ maxWidth: "30%", height: "auto" }} 
-                  />
-                </div>
-              </Link>
-            </SwiperSlide>
-          ))
-        ) : (
-          <h2>No categories found</h2>
-        )}
-      </Swiper>
+      <div className="container">
+        <Swiper
+          slidesPerView={4}
+        >
+          {data?.categories.length ? (
+            data.categories.map((category) => (
+              <SwiperSlide key={category._id}>
+                <Link to={`products/category/${category._id}`}>
+                  <div className="category">
+                    <img
+                      src={category.image.secure_url}
+                      alt={category.name}
+                      style={{ maxWidth: "30%", height: "auto" }} 
+                    />
+                  </div>
+                </Link>
+              </SwiperSlide>
+            ))
+          ) : (
+            <h2>No categories found</h2>
+          )}
+        </Swiper>
+        <div className="swiper-button-next"></div>
+        <div className="swiper-button-prev"></div>
+      </div>
     </div>
   );
 }

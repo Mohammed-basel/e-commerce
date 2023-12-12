@@ -3,15 +3,15 @@ import React from "react";
 import { useQuery } from "react-query";
 import { Link, useParams } from "react-router-dom";
 
-export default function CategoryDetails() {
+const CategoryDetails = () => {
   const { categoryId } = useParams();
 
-  const getCategoriesDetailes = async () => {
+  const getCategoriesDetails = async () => {
     const { data } = await axios.get(`https://ecommerce-node4.vercel.app/products/category/${categoryId}`);
     return data.products;
   };
 
-  const { data, isLoading } = useQuery("category_details", getCategoriesDetailes);
+  const { data, isLoading } = useQuery("category_details", getCategoriesDetails);
 
   if (isLoading) {
     return <p>Loading....</p>;
@@ -24,11 +24,7 @@ export default function CategoryDetails() {
           data.map((product) => (
             <div className="col mb-4" key={product._id}>
               <div className="card">
-                <img
-                  src={product.mainImage.secure_url}
-                  className="card-img-top"
-                  alt={product.name}
-                />
+                <img src={product.mainImage.secure_url} className="card-img-top" alt={product.name} />
                 <div className="card-body">
                   <h5 className="card-title">{product.name}</h5>
                   <Link to={`/product/${product._id}`} className="btn btn-primary">
@@ -44,4 +40,6 @@ export default function CategoryDetails() {
       </div>
     </div>
   );
-}
+};
+
+export default CategoryDetails;

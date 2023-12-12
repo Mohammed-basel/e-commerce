@@ -8,7 +8,7 @@ export default function UserProfile() {
   if (loading) {
     return <p>...Loading</p>;
   }
-  console.log(userData);
+
   return (
     <aside className={`${style.profile}`}>
       <div className={`${style.profileLinks}`}>
