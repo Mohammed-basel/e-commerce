@@ -8,8 +8,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../context/User.jsx";
 
 function SignIn() {
-  let {setUserToken} =useContext(UserContext);
   const navigate = useNavigate();
+
+  
+  let {userToken,setUserToken} =useContext(UserContext);
+  if(userToken){
+    navigate(-1)
+  }
+  
   const initialValues = {
     email: "",
     password: "",
@@ -26,7 +32,7 @@ function SignIn() {
 
       toast("Welcome", {
         position: "top-right",
-        autoClose: 5000,
+        autoClose: 1000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,

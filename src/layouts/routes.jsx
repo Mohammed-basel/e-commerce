@@ -12,6 +12,12 @@ import CategoryDetails from "./../components/web/categories/CategoryDetails";
 import Product from "./../components/web/products/Product";
 import Dashboardlayout from "./Dashboardlayout";
 import ProtectedRoute from "../components/web/protectedRoute/ProtectedRoute";
+import Order from "../components/web/order/Order";
+import UserInfo from "../components/web/userprofile/UserInfo";
+import UserContact from "../components/web/userprofile/UserContact";
+import UserOrders from "../components/web/userprofile/UserOrders";
+
+
 
 export const router = createBrowserRouter([
   {
@@ -32,10 +38,19 @@ export const router = createBrowserRouter([
       },
       {
         path: "cart",
-        element: 
+        element: (
           <ProtectedRoute>
             <Cart />
           </ProtectedRoute>
+        ),
+      },
+      {
+        path: "order",
+        element: (
+          <ProtectedRoute>
+            <Order />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "sendcode",
@@ -47,7 +62,26 @@ export const router = createBrowserRouter([
       },
       {
         path: "userprofile",
-        element: <UserProfile />,
+        element: 
+          <ProtectedRoute>
+            <UserProfile />
+          </ProtectedRoute>,
+          children:[
+            {
+              index:true,
+              element:<UserInfo/>
+
+            },
+            {
+              path :'contact',
+              element:<UserContact/>
+            }
+            ,{
+              path :'orders',
+              element:<UserOrders/>
+            }
+          ]
+        
       },
       {
         path: "categories",

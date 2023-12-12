@@ -6,6 +6,6 @@ export default function ProtectedRoute({children}) {
     if(localStorage.getItem("userToken")==null){
         return <Navigate to='/SignIn'/>
     }
-  return children
+  return children 
 
 }

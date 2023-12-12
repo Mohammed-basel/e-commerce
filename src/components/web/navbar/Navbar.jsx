@@ -1,16 +1,21 @@
 import { Link, useNavigate } from "react-router-dom";
-import CartCounter from "../cart/CartCounter";
 import { useContext } from "react";
 import { UserContext } from "../context/User";
+import { CartContext } from "../context/Cart";
 
 export default function Navbar() {
-  let { userToken } = useContext(UserContext);
+
+  let { userToken,setUserToken,userData,setUserData } = useContext(UserContext);
+
+  const {count}= useContext(CartContext);
+  
 
   let navigate = useNavigate();
 
   const logout = () => {
     localStorage.removeItem("userToken");
     setUserToken(null);
+    setUserData(null);
     navigate("/");
   };
 
@@ -52,7 +57,7 @@ export default function Navbar() {
             {userToken ? (
               <li className="nav-item">
                 <Link className="nav-link" to="cart">
-                  Cart <CartCounter />
+                  Cart {count}
                 </Link>
               </li>
             ) : null}
@@ -66,7 +71,7 @@ export default function Navbar() {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Dropdown
+                {userData!=null?userData.userName:'Account'}
               </a>
               <ul className="dropdown-menu ">
                 {userToken == null ? (
