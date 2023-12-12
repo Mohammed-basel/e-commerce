@@ -33,13 +33,11 @@ function Register() {
       formik.resetForm();
       toast("Account Created Successfully, make sure to verify your email", {
         position: "top-right",
-        autoClose: false,
+        autoClose: 1500,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
+        theme: "dark"
       });
     }
   };

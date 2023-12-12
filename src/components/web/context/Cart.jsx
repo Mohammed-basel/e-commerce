@@ -18,13 +18,11 @@ export function CartContextProvider({ children }) {
       if (data.message === "success") {
         toast("Product Added Successfully", {
           position: "top-right",
-          autoClose: 5000,
+          autoClose: 1500,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
-          draggable: true,
-          progress: 1,
-          theme: "dark",
+          theme: "dark"
         });
       }
       setCount(++count);
@@ -71,13 +69,11 @@ export function CartContextProvider({ children }) {
       if (data.message === "success") {
         toast("Cart Cleared Successfully", {
           position: "top-right",
-          autoClose: 5000,
+          autoClose: 1500,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
-          draggable: true,
-          progress: 1,
-          theme: "dark",
+          theme: "dark"
         });
       }
       setCount(0);

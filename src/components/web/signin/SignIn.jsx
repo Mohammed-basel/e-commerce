@@ -32,13 +32,11 @@ function SignIn() {
 
       toast("Welcome", {
         position: "top-right",
-        autoClose: 1000,
+        autoClose: 1500,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
-        draggable: true,
-        progress: 1,
-        theme: "dark",
+        theme: "dark"
       });
     }
     navigate("/");

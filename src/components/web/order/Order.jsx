@@ -50,7 +50,7 @@ export default function Order() {
       if (response.data.message === "success") {
         toast.success("Order placed successfully!", {
           position: "top-right",
-          autoClose: 3000,
+          autoClose: 1500,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
