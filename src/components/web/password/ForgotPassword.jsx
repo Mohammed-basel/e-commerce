@@ -37,48 +37,56 @@ const ForgotPassword = () => {
   };
 
   return (
-    <Container>
-      <Row className="justify-content-center mt-4">
-        <Col md={6}>
-          <h1 className="text-center">Forgot Password</h1>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group controlId="formBasicEmail">
-              <Form.Label>Email:</Form.Label>
-              <Form.Control
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                placeholder="Enter your email"
-              />
-            </Form.Group>
-            <Form.Group controlId="formBasicPassword">
-              <Form.Label>New Password:</Form.Label>
-              <Form.Control
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                placeholder="Enter your new password"
-              />
-            </Form.Group>
-            <Form.Group controlId="formBasicCode">
-              <Form.Label>Code:</Form.Label>
-              <Form.Control
-                type="text"
-                value={code}
-                onChange={(e) => setCode(e.target.value)}
-                required
-                placeholder="Enter the code from your email"
-              />
-            </Form.Group>
-            <Button variant="primary" type="submit" className="mt-2">
-              Submit
-            </Button>
-          </Form>
-        </Col>
-      </Row>
-    </Container>
+    <div className="container py-5">
+      <div className="row justify-content-center">
+        <div className="col-md-8 col-lg-6">
+          <div className="card shadow">
+            <div className="card-body">
+              <h1 className="text-center mb-4">Forgot Password</h1>
+              <form onSubmit={handleSubmit}>
+                <div className="mb-3">
+                  <label htmlFor="formBasicEmail" className="form-label">Email:</label>
+                  <input
+                    type="email"
+                    className="form-control"
+                    id="formBasicEmail"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    placeholder="Enter your email"
+                  />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="formBasicPassword" className="form-label">New Password:</label>
+                  <input
+                    type="password"
+                    className="form-control"
+                    id="formBasicPassword"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    placeholder="Enter your new password"
+                  />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="formBasicCode" className="form-label">Code:</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="formBasicCode"
+                    value={code}
+                    onChange={(e) => setCode(e.target.value)}
+                    required
+                    placeholder="Enter the code from your email"
+                  />
+                </div>
+                <button type="submit" className="btn btn-primary w-100">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

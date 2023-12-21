@@ -5,13 +5,17 @@ export default function UserContact() {
   const { userData, loading } = useContext(UserContext);
 
   if (loading) {
-    return <p>...Loading</p>;
+    return <p className="text-center">...Loading</p>;
   }
 
   return (
-    <div>
-      <h2>{userData.email}</h2>
-      <p>{userData.phone}</p>
+    <div className="container mt-5 vh-100">
+      <div className="card">
+        <div className="card-body">
+          <h2 className="card-title">{userData.email}</h2>
+          <p className="card-text">{userData.phone}</p>
+        </div>
+      </div>
     </div>
   );
 }

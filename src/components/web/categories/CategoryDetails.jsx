@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useQuery } from "react-query";
 import { Link, useParams } from "react-router-dom";
+import "./CategoryDetails.css";
 
 const CategoryDetails = () => {
   const { categoryId } = useParams();
@@ -18,7 +19,7 @@ const CategoryDetails = () => {
   }
 
   return (
-    <div className="container mt-4">
+    <div className="category-details container mt-4">
       <div className="row row-cols-1 row-cols-md-3 g-4">
         {data.length ? (
           data.map((product) => (

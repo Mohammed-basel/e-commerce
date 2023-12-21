@@ -2,13 +2,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../context/User";
 import { CartContext } from "../context/Cart";
+import {FaUser,FaSignInAlt,FaSignOutAlt,FaHome,FaList,FaBox,FaShoppingCart} from "react-icons/fa";
 
 export default function Navbar() {
+  let { userToken, setUserToken, userData, setUserData } =
+    useContext(UserContext);
 
-  let { userToken,setUserToken,userData,setUserData } = useContext(UserContext);
-
-  const {count}= useContext(CartContext);
-  
+  const { count } = useContext(CartContext);
 
   let navigate = useNavigate();
 
@@ -40,24 +40,26 @@ export default function Navbar() {
           <ul className="navbar-nav m-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <Link className="nav-link" to={"/"}>
-                Home
+                <FaHome /> Home
               </Link>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
-                Categories
+                <FaList /> Categories
               </a>
             </li>
-
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Products
-              </a>
+              <Link className="nav-link" to="/allproducts">
+                <FaBox /> Products
+              </Link>
             </li>
             {userToken ? (
               <li className="nav-item">
                 <Link className="nav-link" to="cart">
-                  Cart {count}
+                  <FaShoppingCart /> Cart
+                  {count > 0 && (
+                    <span className="badge bg-secondary ms-1">{count}</span>
+                  )}
                 </Link>
               </li>
             ) : null}
@@ -71,14 +73,14 @@ export default function Navbar() {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                {userData!=null?userData.userName:'Account'}
+                {userData != null ? userData.userName : "Account"}
               </a>
-              <ul className="dropdown-menu ">
+              <ul className="dropdown-menu">
                 {userToken == null ? (
                   <>
                     <li>
                       <Link className="dropdown-item" to="/Register">
-                        register
+                        <FaUser /> Register
                       </Link>
                     </li>
                     <li>
@@ -86,7 +88,7 @@ export default function Navbar() {
                     </li>
                     <li>
                       <Link className="dropdown-item" to="/signIn">
-                        login
+                        <FaSignInAlt /> Login
                       </Link>
                     </li>
                   </>
@@ -94,7 +96,7 @@ export default function Navbar() {
                   <>
                     <li>
                       <Link className="dropdown-item" to="/userprofile">
-                        Profile
+                        <FaUser /> Profile
                       </Link>
                     </li>
                     <li>
@@ -102,7 +104,7 @@ export default function Navbar() {
                     </li>
                     <li>
                       <Link className="dropdown-item" onClick={logout}>
-                        logout
+                        <FaSignOutAlt /> Logout
                       </Link>
                     </li>
                   </>

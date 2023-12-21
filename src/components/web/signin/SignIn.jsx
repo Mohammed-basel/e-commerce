@@ -22,24 +22,36 @@ function SignIn() {
   };
 
   const onSubmit = async (users) => {
-    const { data } = await axios.post(
-      `https://ecommerce-node4.vercel.app/auth/signin`,
-      users
-    );
-    if (data.message == "success") {
-      localStorage.setItem("userToken", data.token);
-      setUserToken(data.token);
-
-      toast("Welcome", {
+    try {
+      const { data } = await axios.post(
+        `https://ecommerce-node4.vercel.app/auth/signin`,
+        users
+      );
+      if (data.message === "success") {
+        localStorage.setItem("userToken", data.token);
+        setUserToken(data.token);
+        toast("Welcome", {
+          position: "top-right",
+          autoClose: 1500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          theme: "dark"
+        });
+        navigate("/");
+      } else {
+      }
+    } catch (error) {
+      toast.error("Invalid email or password", {
         position: "top-right",
-        autoClose: 1500,
+        autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
+        draggable: true,
         theme: "dark"
       });
     }
-    navigate("/");
   };
 
   const formik = useFormik({

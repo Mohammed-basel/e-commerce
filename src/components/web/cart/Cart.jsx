@@ -145,41 +145,7 @@ export default function Cart() {
               <button className="btn btn-danger" onClick={clearCartContext}>
                 Clear Cart
               </button>
-
               <div className="summary-items mt-3">
-                <div className="summary-item mb-3">
-                  <div className="form-check">
-                    <input
-                      type="radio"
-                      className="form-check-input"
-                      id="freeShipping"
-                    />
-                    <label className="form-check-label" htmlFor="freeShipping">
-                      Free shipping
-                    </label>
-                  </div>
-                  <span className="ml-3">$0.00</span>
-                </div>
-                <div className="summary-item">
-                  <div className="form-group">
-                    <input type="radio" /> <label>Express shipping</label>
-                  </div>
-                  <span>+$15.00</span>
-                </div>
-                <div className="summary-item">
-                  <div className="form-group">
-                    <input type="radio" /> <label>Pick Up</label>
-                  </div>
-                  <span>%21.00</span>
-                </div>
-                <div className="summary-footer">
-                  <label>Subtotal</label>
-                  <span>$1234.00</span>
-                </div>
-                <div className="summary-footer">
-                  <label className="total">Total</label>
-                  <span>$1345.00</span>
-                </div>
                 <div className="checkout">
                   <Link to="/order">Checkout</Link>
                 </div>

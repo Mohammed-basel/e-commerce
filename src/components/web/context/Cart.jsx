@@ -22,15 +22,27 @@ export function CartContextProvider({ children }) {
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
-          theme: "dark"
+          theme: "dark",
         });
       }
       setCount(++count);
       return data;
     } catch (error) {
-      console.log(error);
+      if (error.response && error.response.status === 409) {
+        toast("Product already in cart", {
+          position: "top-right",
+          autoClose: 1500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          theme: "dark",
+        });
+      } else {
+        console.log(error);
+      }
     }
   };
+
   const getCartContext = async () => {
     try {
       const token = localStorage.getItem("userToken");
@@ -73,7 +85,7 @@ export function CartContextProvider({ children }) {
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
-          theme: "dark"
+          theme: "dark",
         });
       }
       setCount(0);
@@ -111,7 +123,6 @@ export function CartContextProvider({ children }) {
       console.log(error);
     }
   };
-
 
   return (
     <CartContext.Provider

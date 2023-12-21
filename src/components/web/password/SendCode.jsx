@@ -30,28 +30,28 @@ const SendCode = () => {
   };
 
   return (
-    <Container>
-      <Row className="justify-content-center mt-4">
-        <Col md={6}>
+    <div className="container">
+      <div className="row justify-content-center mt-4">
+        <div className="col-md-6">
           <h1 className="text-center">Send Code</h1>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group controlId="formBasicEmail">
-              <Form.Label>Email:</Form.Label>
-              <Form.Control
+          <form onSubmit={handleSubmit}>
+            <div className="mb-3">
+              <label htmlFor="formBasicEmail" className="form-label">Email:</label>
+              <input
                 type="email"
+                className="form-control"
+                id="formBasicEmail"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 placeholder="Enter your email"
               />
-            </Form.Group>
-            <Button variant="primary" type="submit" className="mt-2">
-              Submit
-            </Button>
-          </Form>
-        </Col>
-      </Row>
-    </Container>
+            </div>
+            <button type="submit" className="btn btn-primary mt-2 w-100">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 };
 

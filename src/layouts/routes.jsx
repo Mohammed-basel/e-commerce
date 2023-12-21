@@ -16,6 +16,9 @@ import Order from "../components/web/order/Order";
 import UserInfo from "../components/web/userprofile/UserInfo";
 import UserContact from "../components/web/userprofile/UserContact";
 import UserOrders from "../components/web/userprofile/UserOrders";
+import AllProducts from './../components/web/allproducts/AllProducts';
+import Homedashboard from "../components/dashboard/home/Home.jsx"
+import CategoriesDashboard from "../components/dashboard/categoties/Categories.jsx" 
 
 
 
@@ -59,6 +62,10 @@ export const router = createBrowserRouter([
       {
         path: "forgotpassword",
         element: <ForgotPassword />,
+      },
+      {
+        path: "allproducts",
+        element: <AllProducts />,
       },
       {
         path: "userprofile",
@@ -106,12 +113,12 @@ export const router = createBrowserRouter([
     element: <Dashboardlayout />,
     children: [
       {
-        //path: "home",
-        //element: <Homedashboard />,
+        path: "home",
+        element: <Homedashboard />,
       },
       {
-        //path: "categories",
-        //element: <CategoriesDashboard />,
+        path: "categories",
+        element: <CategoriesDashboard />,
       },
       {
         path: "*",
