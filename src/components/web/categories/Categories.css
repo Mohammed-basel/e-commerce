@@ -1,21 +1,14 @@
 .header {
   position: relative;
   text-align: center;
-  margin-bottom: 50px;
 }
-
-.header img {
-  width: 100%;
-  height: 70vh !important;
-  object-fit: cover;
-}
-
 .header-text {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #000;
+  margin-bottom: 500px !important;
 }
 
 .slider{

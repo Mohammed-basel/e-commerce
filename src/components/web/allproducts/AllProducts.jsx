@@ -3,6 +3,7 @@ import axios from "axios";
 import ReactPaginate from "react-paginate";
 import "./AllProducts.css";
 import { Link } from "react-router-dom";
+import Loading from "../../loading/Loading";
 
 const ratingStars = (rating) => {
   const stars = [];
@@ -88,7 +89,7 @@ const AllProducts = () => {
         </div>
       </div>
       {isLoading ? (
-        <p>Loading....</p>
+        <Loading/>
       ) : (
         <div className="row">
           {products.map((product) => (

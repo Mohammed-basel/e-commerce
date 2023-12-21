@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
 import "./Categories.css";
+import Loading from "../../loading/Loading";
 
 export default function Categories() {
   const getCategories = async () => {
@@ -26,7 +27,7 @@ export default function Categories() {
   );
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <Loading />;
   }
 
   if (isError) {
@@ -35,19 +36,14 @@ export default function Categories() {
 
   return (
     <div>
-      <div className="header">
-        <img
-          src="assets/img/sarah-dorweiler-x2Tmfd1-SgA-unsplash.jpg"
-          alt="Header Image"
-          style={{ width: "100%", height: "80vh", objectFit: "cover" }}
-        />
-        <div className="header-text">
-          <h1>Mohammed's shop</h1>
+      <div className="header py-5 my-5">
+        <div className="header-text mb-5">
+          <h1 className="mb-5">Mohammed's shop</h1>
         </div>
       </div>
-      <div className="container">
+      <div className="container mt-5">
         <Swiper
-          className="custom-swiper"
+          className="custom-swiper mt-5"
           slidesPerView={4}
           modules={[Navigation]}
           navigation={true}

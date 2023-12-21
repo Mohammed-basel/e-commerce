@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { CartContext } from "../context/Cart.jsx";
 import { toast } from "react-toastify";
 import "./Product.css";
+import Loading from "../../loading/Loading.jsx";
 
 const StarRating = ({ rating }) => {
   const stars = [];
@@ -78,9 +79,8 @@ export default function Product() {
       });
     }
   };
-
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <Loading/>;
   }
 
   return (
@@ -114,7 +114,6 @@ export default function Product() {
             {data.discount > 0 && `(Save $${data.discount}%)`}
           </p>
           <p>{data.description}</p>
-          <StarRating rating={data.avgRating} />
           <button
             className=" btn-add-to-cart mt-3"
             onClick={() => addToCart(data._id)}

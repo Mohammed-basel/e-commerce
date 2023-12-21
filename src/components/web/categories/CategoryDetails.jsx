@@ -3,6 +3,7 @@ import React from "react";
 import { useQuery } from "react-query";
 import { Link, useParams } from "react-router-dom";
 import "./CategoryDetails.css";
+import Loading from "../../loading/Loading";
 
 const CategoryDetails = () => {
   const { categoryId } = useParams();
@@ -15,7 +16,7 @@ const CategoryDetails = () => {
   const { data, isLoading } = useQuery("category_details", getCategoriesDetails);
 
   if (isLoading) {
-    return <p>Loading....</p>;
+    return <Loading/>;
   }
 
   return (

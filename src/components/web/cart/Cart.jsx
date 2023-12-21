@@ -3,6 +3,7 @@ import "./Cart.css";
 import { CartContext } from "../context/Cart.jsx";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
+import Loading from "../../loading/Loading.jsx";
 
 export default function Cart() {
   const {
@@ -34,7 +35,7 @@ export default function Cart() {
   const { data, isLoading } = useQuery("cart", getCart);
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <Loading/>;
   }
   return (
     <div className="cart">
