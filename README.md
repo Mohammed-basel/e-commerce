@@ -19,5 +19,10 @@ Welcome to the repository for our comprehensive E-Commerce website's front-end, 
 ## Technologies Used:
 
 - **React:** Utilized for building a dynamic and responsive user interface.
-- **HTML, Bootstrap, and CSS:** Ensured a visually appealing and consistent design throughout the website.
 - **JavaScript:** Employed for client-side scripting and dynamic content rendering.
+- **HTML, Bootstrap, and CSS:** Ensured a visually appealing and consistent design throughout the website.
+
+
+## View the Project:
+
+Explore the live version of the E-Commerce website [here](https://e-commerce-dyfe.onrender.com/).
