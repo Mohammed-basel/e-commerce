@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./UserOrders.css";
+import Loading from './../../loading/Loading';
 
 const UserOrders = () => {
   const [orders, setOrders] = useState([]);
@@ -33,7 +34,7 @@ const UserOrders = () => {
   }, []);
 
   if (loading) {
-    return <p>...Loading</p>;
+    return <Loading />;
   }
 
   return (
@@ -51,7 +52,6 @@ const UserOrders = () => {
                 <th>Payment Type</th>
                 <th>Status</th>
                 <th>Order Date</th>
-                <th>Products</th>
               </tr>
             </thead>
             <tbody>
@@ -62,15 +62,6 @@ const UserOrders = () => {
                 <td>{order.paymentType}</td>
                 <td>{order.status}</td>
                 <td>{order.createdAt}</td>
-                <td>
-                  {order.products.map((product, index) => (
-                    <div key={product._id}>
-                      {index + 1}. Product ID: {product.productId}, Quantity:{" "}
-                      {product.quantity}, Unit Price: ${product.unitPrice},
-                      Final Price: ${product.finalPrice}
-                    </div>
-                  ))}
-                </td>
               </tr>
             </tbody>
           </table>
