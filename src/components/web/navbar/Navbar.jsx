@@ -44,9 +44,9 @@ export default function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="/AllCategories">
                 <FaList /> Categories
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/allproducts">

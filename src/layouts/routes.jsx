@@ -19,6 +19,7 @@ import UserOrders from "../components/web/userprofile/UserOrders";
 import AllProducts from './../components/web/allproducts/AllProducts';
 import Homedashboard from "../components/dashboard/home/Home.jsx"
 import CategoriesDashboard from "../components/dashboard/categoties/Categories.jsx" 
+import AllCategories from "../components/web/allcategories/AllCategories.jsx"
 
 
 
@@ -38,6 +39,10 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "AllCategories",
+        element: <AllCategories />,
       },
       {
         path: "cart",
@@ -77,7 +82,6 @@ export const router = createBrowserRouter([
             {
               index:true,
               element:<UserInfo/>
-
             },
             {
               path :'contact',
