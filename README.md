@@ -26,7 +26,3 @@ Welcome to the repository for our comprehensive E-Commerce website's front-end, 
 ## View the Project:
 
 Explore the live version of the E-Commerce website [here](https://e-commerce-dyfe.onrender.com/).
-
-# React + Vite
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
