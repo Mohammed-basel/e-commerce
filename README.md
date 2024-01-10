@@ -1,6 +1,6 @@
 # E-Commerce Website - React-based Front-End
 
-Welcome to the repository for our comprehensive E-Commerce website's front-end, developed using React, HTML, JavaScript, Bootstrap, and CSS. This project encompasses a rich set of features to provide users with a seamless online shopping experience.
+Welcome to the repository for my comprehensive E-Commerce website's front-end, developed using React, HTML, JavaScript, Bootstrap, and CSS. This project encompasses a rich set of features to provide users with a seamless online shopping experience.
 
 ## Key Features:
 
