@@ -13,7 +13,7 @@ const SendCode = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.patch('https://ecommerce-node4.vercel.app/auth/sendcode', {
+      const response = await axios.patch('https://ecommerce-node4-five.vercel.app/auth/sendcode', {
         email,
       });
 

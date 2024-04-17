@@ -13,7 +13,7 @@ const UserOrders = () => {
       try {
         const userToken = localStorage.getItem("userToken");
         const response = await axios.get(
-          "https://ecommerce-node4.vercel.app/order",
+          "https://ecommerce-node4-five.vercel.app/order",
           {
             headers: {
               Authorization: `Tariq__${userToken}`,

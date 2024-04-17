@@ -9,7 +9,7 @@ const AllCategories = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('https://ecommerce-node4.vercel.app/categories/active?limit=7');
+        const response = await axios.get('https://ecommerce-node4-five.vercel.app/categories/active?limit=7');
         setCategories(response.data.categories);
       } catch (error) {
         console.error('Error fetching categories', error);

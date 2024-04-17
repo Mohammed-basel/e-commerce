@@ -15,7 +15,7 @@ export default function Categories() {
   const getCategories = async () => {
     try {
       const { data } = await axios.get(
-        "https://ecommerce-node4.vercel.app/categories/active?limit=7"
+        "https://ecommerce-node4-five.vercel.app/categories/active?limit=7"
       );
       return data;
     } catch (error) {
@@ -32,7 +32,7 @@ export default function Categories() {
     const fetchDiscountedProducts = async () => {
       try {
         const response = await axios.get(
-          "https://ecommerce-node4.vercel.app/products?page=1&limit=10"
+          "https://ecommerce-node4-five.vercel.app/products?page=1&limit=10"
         );
         const productsWithDiscount = response.data.products.filter(
           (product) => product.discount > 0

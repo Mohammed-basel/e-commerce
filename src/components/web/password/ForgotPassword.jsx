@@ -16,7 +16,7 @@ const ForgotPassword = () => {
 
     try {
       const response = await axios.patch(
-        "https://ecommerce-node4.vercel.app/auth/forgotPassword",
+        "https://ecommerce-node4-five.vercel.app/auth/forgotPassword",
         {
           email,
           password,

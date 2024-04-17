@@ -37,7 +37,7 @@ const AllProducts = () => {
       setIsLoading(true);
 
       try {
-        let url = `https://ecommerce-node4.vercel.app/products?page=${currentPage}&limit=${productsPerPage}`;
+        let url = `https://ecommerce-node4-five.vercel.app/products?page=${currentPage}&limit=${productsPerPage}`;
         if (sortBy === "stock") {
           url += `&sort=-stock`;
         } else if (sortBy) {

@@ -36,7 +36,7 @@ export default function Product() {
 
   const getProduct = async () => {
     const { data } = await axios.get(
-      `https://ecommerce-node4.vercel.app/products/${productId}`
+      `https://ecommerce-node4-five.vercel.app/products/${productId}`
     );
     return data.product;
   };
@@ -52,7 +52,7 @@ export default function Product() {
       const token = localStorage.getItem("userToken");
 
       const response = await axios.post(
-        `https://ecommerce-node4.vercel.app/products/${productId}/review`,
+        `https://ecommerce-node4-five.vercel.app/products/${productId}/review`,
         { comment, rating },
         { headers: { Authorization: `Tariq__${token}` } }
       );

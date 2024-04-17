@@ -32,7 +32,7 @@ export default function Order() {
     try {
       const token = localStorage.getItem("userToken");
       const response = await axios.post(
-        "https://ecommerce-node4.vercel.app/order",
+        "https://ecommerce-node4-five.vercel.app/order",
         {
           couponName: coupon,
           address,

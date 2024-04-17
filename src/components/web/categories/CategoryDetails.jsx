@@ -9,7 +9,7 @@ const CategoryDetails = () => {
   const { categoryId } = useParams();
 
   const getCategoriesDetails = async () => {
-    const { data } = await axios.get(`https://ecommerce-node4.vercel.app/products/category/${categoryId}`);
+    const { data } = await axios.get(`https://ecommerce-node4-five.vercel.app/products/category/${categoryId}`);
     return data.products;
   };
 
